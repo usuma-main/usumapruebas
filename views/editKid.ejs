@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<link rel="shortcut icon"   href="/favicon.ico"/>
+		<title>Editar información</title>
+        <!-- styles-->
+		<link rel="stylesheet" href="/styles/styles.min.css"/>
+		<!-- web-font loader-->
+		<script>
+			WebFontConfig = {
+
+				google: {
+
+					families: ['Quicksand:300,400,500,700', 'Permanent+Marker:400'],
+
+				}
+
+			}
+
+			function font() {
+
+				var wf = document.createElement('script')
+
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
+				wf.type = 'text/javascript'
+				wf.async = 'true'
+
+				var s = document.getElementsByTagName('script')[0]
+
+				s.parentNode.insertBefore(wf, s)
+
+			}
+
+			font()
+		</script>
+	</head>
+	<body>
+		<div class="page-wrapper">
+		
+			  <!-- aside dropdown start-->
+
+			<%- include("partials/asidemenu") -%>
+			<!-- aside dropdown end-->
+			<!-- header start-->
+
+			<%- include("partials/mainNav") -%>
+			<!-- header end-->
+			<main class="main">
+                <section class="promo-primary promo-primary--shop">
+					<picture>
+						<source srcset="/img/2photo.jpg" media="(min-width: 992px)"/><img class="img--bg" src="/img/2photo.jpg" alt="img"/>
+					</picture>
+					<div class="promo-primary__description"> <span>ADMIN</span></div>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item">
+										<h1 class="promo-primary__title"><span>Admin</span> <span>Cuenta</span></h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+                
+				
+				<!-- donation start-->
+				<section class="section donation"><img class="donation__bg" src="/img/donation_img.png" alt="img"/>
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="donation-item">
+									<div class="donation-item__img">
+										<img class="img--bg"  src="data:image/<%=kid.image.contentType%>;base64, 
+                                        <%=kid.image.data.toString('base64')%>" alt="img">
+										
+									</div>
+									<div class="donation-item__body">
+										<div class="row">
+											<div class="col-12">
+												<h5 class="donation-item__title">Editar niñ@</h5>
+											</div>
+										</div>
+										
+										<form class="form donation-form" action="/admin/editKid" method="POST" enctype="multipart/form-data">
+											
+											<div class="row align-items-baseline margin-bottom">
+												<label for="imageProfile" class="btn">Seleccionar imagen</label>
+												<input id="imageProfile" type="file" name="image" style="
+											padding: 1px;
+											background: #272623;
+											color: white;
+											border-radius: 10px;
+											position: relative;
+											align-content: center;
+											left: 3%;
+											margin: auto;
+											width: 111px;
+											top: -20px;
+											border: hidden;
+											font-weight: bold;
+										"></input>
+												<div class="col-lg-4 margin-30">
+													Id
+													<input class="form__field" type="text" name="id" value="<%= kid._id %>" disabled placeholder="Id"/>
+													<input class="form__field" type="hidden" name="id" value="<%= kid._id %>"/>
+												</div>
+												<div class="col-12">
+													<h6 class="form__title">Grado estudiantil</h6>
+												</div>
+												<div class="col-lg-7 col-xl-6 text-lg-right">
+													<%if(kid.schoolGrade =="1ro"){%>
+														<label class="form__radio-label"><span class="form__label-text">1er grado</span>
+															<input class="form__input-radio" type="radio" name="schoolGrade" value="1ro" checked="checked"/><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">2do grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="2do" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">3er grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="3ro" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">4to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="4to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">5to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="5to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">6to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="6to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+													<%}else if(kid.schoolGrade =="2do"){%>
+														<label class="form__radio-label"><span class="form__label-text">1er grado</span>
+															<input class="form__input-radio" type="radio" name="schoolGrade" value="1ro" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">2do grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="2do" checked="checked"/><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">3er grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="3ro" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">4to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="4to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">5to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="5to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">6to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="6to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+													<%}else if(kid.schoolGrade =="3ro"){%>
+														<label class="form__radio-label"><span class="form__label-text">1er grado</span>
+															<input class="form__input-radio" type="radio" name="schoolGrade" value="1ro" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">2do grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="2do" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">3er grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="3ro" checked="checked"/><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">4to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="4to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">5to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="5to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">6to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="6to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+													<%}else if(kid.schoolGrade =="4to"){%>
+														<label class="form__radio-label"><span class="form__label-text">1er grado</span>
+															<input class="form__input-radio" type="radio" name="schoolGrade" value="1ro" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">2do grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="2do" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">3er grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="3ro" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">4to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="4to" checked="checked"/><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">5to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="5to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">6to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="6to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+													<%}else if(kid.schoolGrade =="5to"){%>
+														<label class="form__radio-label"><span class="form__label-text">1er grado</span>
+															<input class="form__input-radio" type="radio" name="schoolGrade" value="1ro" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">2do grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="2do" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">3er grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="3ro" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">4to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="4to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">5to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="5to" checked="checked"/><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">6to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="6to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+													<%}else if(kid.schoolGrade =="6to"){%>
+														<label class="form__radio-label"><span class="form__label-text">1er grado</span>
+															<input class="form__input-radio" type="radio" name="schoolGrade" value="1ro" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">2do grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="2do" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">3er grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="3ro" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">4to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="4to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">5to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="5to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">6to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="6to" checked="checked"/><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+													<%}else{%>
+														<label class="form__radio-label"><span class="form__label-text">1er grado</span>
+															<input class="form__input-radio" type="radio" name="schoolGrade" value="1ro" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">2do grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="2do" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">3er grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="3ro" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">4to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="4to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">5to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="5to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														<label class="form__radio-label"><span class="form__label-text">6to grado</span>
+															<input class="form__input-radio" type="radio"  name="schoolGrade" value="6to" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+													<%}%>
+													
+														
+												</div>
+											</div>
+											
+											<div class="row">
+												<div class="col-12">
+													<h6 class="form__title">Información del niño</h6>
+												</div>
+												<div class="col-lg-4 margin-30">
+													<label>Nombre(s)</label>
+													<input class="form__field" type="text" name="firstname" value="<%= kid.name %>" placeholder="Nombre(s)"/>
+												</div>
+												<div class="col-lg-4 margin-30">
+													<label>Apellidos</label>
+													<input class="form__field" type="text" name="lastname" value="<%= kid.lastname %>" placeholder="Apellidos"/>
+												</div>
+												
+
+												<div class="col-lg-4 margin-30">
+													<label>Fecha de nacimiento</label>
+													<input class="form__field" type="date" name="birthday" value="<%= birthday %>" placeholder="Cumpleaños"/>
+												</div>
+												
+												<div class="col-lg-4 margin-30">
+													<label>Hobbies</label>
+													<input class="form__field" type="text" name="Hobbies" value="<%= kid.Hobbies %>" placeholder="Hobbies"/>
+												</div>
+												<div class="col-lg-4 margin-30">
+													<label>Visión</label>
+													<input class="form__field" type="text" name="Vision" value="<%= kid.Vision %>" placeholder="Visión"/>
+												</div>
+
+												<div class="col-lg-4 margin-30">
+													<label>Fecha de inscripción</label>
+													<input class="form__field" type="text" name="signUpDate" value="<%= kid.signUpDate.toLocaleString() %>" placeholder="Fecha de inscripción" disabled/>
+												</div>
+
+												<div class="col-lg-4 margin-30">
+													<label>Nombre del familiar</label>
+													<input class="form__field" type="text" name="familiarName" value="<%= kid.parents.familiarName %>" placeholder="familiarName"/>
+												</div>
+
+												<div class="col-lg-4 margin-30">
+													<label>Número celular</label>
+													<input class="form__field" type="text" name="cellphone" value="<%= kid.parents.cellphone %>" placeholder="cellphone"/>
+												</div>
+												<div class="col-lg-4 margin-30">
+													<label>Padre</label>
+													<input class="form__field" type="text" name="father" value="<%= kid.parents.father %>" placeholder="father"/>
+												</div>
+												<div class="col-lg-4 margin-30">
+													<label>Celular del padre</label>
+													<input class="form__field" type="text" name="fatherCellphone" value="<%= kid.parents.fatherCellphone %>" placeholder="fatherCellphone"/>
+												</div>
+												<div class="col-lg-4 margin-30">
+													<label>Escolaridad del padre</label>
+													<input class="form__field" type="text" name="fatherSchoolGrade" value="<%= kid.parents.fatherSchoolGrade %>" placeholder="fatherSchoolGrade"/>
+												</div>
+												<div class="col-lg-4 margin-30">
+													<label>Madre</label>
+													<input class="form__field" type="text" name="mother" value="<%= kid.parents.mother %>" placeholder="mother"/>
+												</div>
+												
+												<div class="col-lg-4 margin-30">
+													<label>Celular de la madre</label>
+													<input class="form__field" type="text" name="motherCellphone" value="<%= kid.parents.motherCellphone %>" placeholder="motherCellphone"/>
+												</div>
+												<div class="col-lg-4 margin-30">
+													<label>Escolaridad de la Madre</label>
+													<input class="form__field" type="text" name="motherSchoolGrade" value="<%= kid.parents.motherSchoolGrade %>" placeholder="motherSchoolGrade"/>
+												</div>
+												<div class="col-lg-4 margin-30">
+													<label>Número de hijos</label>
+													<input class="form__field" type="number" name="sons" value="<%= kid.parents.sons %>" placeholder="sons"/>
+												</div>
+
+												<div class="col-12">
+													<h6 class="form__title">Género</h6>
+												</div>
+												<div class="col-lg-7 col-xl-6 text-lg-right">
+													<% if(kid.gender=="M"){ %>
+														<label class="form__radio-label"><span class="form__label-text">Hombre</span>
+															<input checked="checked" class="form__input-radio" type="radio" name="gender" value="M" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														
+														<label class="form__radio-label"><span class="form__label-text">Mujer</span>
+															<input class="form__input-radio" type="radio"  name="gender" value="F" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+													
+													<% } else  { %>
+														<label class="form__radio-label"><span class="form__label-text">Hombre</span>
+															<input  class="form__input-radio" type="radio" name="gender" value="M" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														
+														<label class="form__radio-label"><span class="form__label-text">Mujer</span>
+															<input checked="checked" class="form__input-radio" type="radio"  name="gender" value="F" /><span class="form__radio-mask form__radio-mask"></span>
+														</label>
+														
+													<% } %>
+													
+												</div>
+												
+												<% if(kid.godparent){ %>
+
+													<div class="col-12">
+														<h6 class="form__title">Información del padrino</h6>
+													</div>
+													<div class="col-lg-4 margin-30">
+														<label>Nombre(s) del padrino</label>
+														<input disabled class="form__field" type="text" name="firstNameGodparent" value="<%= kid.godparent.name %>" placeholder="Nombre(s)"/>
+													</div>
+													<div class="col-lg-4 margin-30">
+														<label>Apellidos del padrino</label>
+														<input disabled class="form__field" type="text" name="lastNameGodparent" value="<%= kid.godparent.lastname %>" placeholder="Apellidos"/>
+													</div>
+	
+													<div class="col-lg-4 margin-30">
+														<label>Correo</label>
+														<input disabled class="form__field" type="email" name="email" value="<%= kid.godparent.email %>" placeholder="Correo"/>
+													</div>
+	
+													<div class="col-lg-4 margin-30">
+														<label>Celular</label>
+														<input disabled class="form__field" type="number" name="cellphone" value="<%= kid.godparent.cellphone %>" placeholder="Teléfono celular"/>
+													</div>
+													<div class="col-lg-4 margin-30">
+														<label>RFC</label>
+														<input disabled class="form__field" type="text" name="RFC" placeholder="RFC" value="<%= kid.godparent.RFC %>" />
+													</div>
+													<div class="col-lg-4 margin-30">
+														<label>subscriptionID (Paypal)</label>
+														<input disabled class="form__field" type="text" name="subscriptionId" value="<%= kid.godparent.subscriptionId %>" placeholder="Subscription ID"/>
+													</div>
+													<div class="col-lg-4 margin-30">
+														<label>Código postal (Paypal)</label>
+														<input disabled class="form__field" type="text" name="postalCode" value="<%= kid.godparent.postalCode %>" placeholder="Postal code"/>
+													</div>
+													<div class="col-lg-4 margin-30">
+														<label>Causa social (Paypal)</label>
+														<input disabled class="form__field" type="text" name="socialCause" value="<%= kid.godparent.socialCause %>" placeholder="Social cause "/>
+													</div>
+													<div class="col-lg-4 margin-30">
+														<label>Fecha de nacimiento del padrino</label>
+														<input disabled class="form__field" type="text" name="birthdayGodparent" value="<%= kid.godparent.birthday.toLocaleString() %>" placeholder="Cumpleaños"/>
+													</div>
+													<% }else{ %>
+														<div class="col-12">
+															<h6 class="form__title">Información del padrino</h6>
+														</div>
+														<div class="col-lg-4 margin-30">
+															<label>Nombre(s) del padrino</label>
+															<input disabled class="form__field" type="text" name="firstNameGodparent" value="" placeholder="Nombre(s)"/>
+														</div>
+														<div class="col-lg-4 margin-30">
+															<label>Apellidos del padrino</label>
+															<input disabled class="form__field" type="text" name="lastNameGodparent" value="" placeholder="Apellidos"/>
+														</div>
+		
+														<div class="col-lg-4 margin-30">
+															<label>Correo</label>
+															<input disabled class="form__field" type="email" name="email" value="" placeholder="Correo"/>
+														</div>
+		
+														<div class="col-lg-4 margin-30">
+															<label>Celular</label>
+															<input disabled class="form__field" type="number" name="cellphone" value="" placeholder="Teléfono celular"/>
+														</div>
+														<div class="col-lg-4 margin-30">
+															<label>RFC</label>
+															<input disabled class="form__field" type="text" name="RFC" placeholder="RFC" value="" />
+														</div>
+														<div class="col-lg-4 margin-30">
+															<label>subscriptionID (Paypal)</label>
+															<input disabled class="form__field" type="text" name="subscriptionId" value="" placeholder="Subscription ID"/>
+														</div>
+														<div class="col-lg-4 margin-30">
+															<label>Código postal (Paypal)</label>
+															<input disabled class="form__field" type="text" name="postalCode" value="" placeholder="Postal code"/>
+														</div>
+														<div class="col-lg-4 margin-30">
+															<label>Causa social (Paypal)</label>
+															<input disabled class="form__field" type="text" name="socialCause" value="" placeholder="Social cause "/>
+														</div>
+														<div class="col-lg-4 margin-30">
+															<label>Fecha de nacimiento del padrino</label>
+															<input disabled class="form__field" type="text" name="birthdayGodparent" value="" placeholder="Cumpleaños"/>
+														</div>
+													<% }%>
+												
+													
+													<div class="col-lg-4 margin-30">
+														<label class="form__checkbox-label"><span class="form__label-text">Aviso de privacidad</span>
+															<% if(kid.noticeOfPrivacy){%>
+															<input class="form__input-checkbox" type="checkbox" name="noticeOfPrivacy" value="Size XXL" checked="checked"><span class="form__checkbox-mask"></span>
+															<%} else{ %>
+															<input class="form__input-checkbox" type="checkbox" name="noticeOfPrivacy" value="Size XXL" ><span class="form__checkbox-mask"></span>
+															<% } %>
+														</label>
+														
+													</div>
+													
+												<div class="col-lg-4">
+													<a class="form__submit" type="button" href="/admin" >Cancelar</a>
+													<button class="form__submit"   type="submit">Guardar</button> 
+													
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- donation end-->
+				
+			
+			</main>
+		<%- include("partials/footer") -%>
+		</div>
+		<!-- libs-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="/js/libs.min.js"></script>
+		<!-- scripts-->
+		<script src="/js/common.min.js"></script>
+		
+	</body>
+</html>

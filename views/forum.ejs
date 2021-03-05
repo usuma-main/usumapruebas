@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon"   href="/favicon.ico"/>
+		<title>Usuma | Apadrinar</title>
+    <link rel="stylesheet"  href="/styles/forum.css" />
+  </head>
+
+  <body>
+    <div class="welcome">
+      <h1>QUEREMOS CONOCERTE</h1>
+      <p>
+        Llena el siguiente formulario para que puedas estar en contacto con tu
+        ahijado y todo lo que sucede en la escuela.
+      </p>
+      <p>Prometemos no saturar tu inbox</p>
+    </div>
+
+    <div class="container">
+      <form id="godParentData" action="/confirmPayment" method="POST">
+        <div class="form">
+          <div class="labels">
+            <input
+              class="inputValid"
+              id="fName"
+              type="text"
+              name="fName"
+              placeholder="Nombre"
+              autocomplete="off"
+              maxlength="100"
+            />
+            <p>Favor de introducir su nombre</p>
+          </div>
+          <div class="labels">
+            <input
+              class="inputValid"
+              id="lastName"
+              type="text"
+              name="lastName"
+              placeholder="Apellido"
+              autocomplete="off"
+              maxlength="100"
+            />
+            <p>Favor de introducir su apellidos</p>
+          </div>
+          <div class="labels">
+            <input
+              class="inputValid"
+              id="email"
+              type="text"
+              name="email"
+              placeholder="Email"
+              autocomplete="off"
+              maxlength="80"
+            />
+            <p>Introduzca un correo válido con @ejemplo.com</p>
+          </div>
+
+          <div class="labels">
+            <input
+              class="inputValid"
+              id="birthday"
+              type="date"
+              name="birthday"
+              placeholder="Cumpleaños"
+            />
+            <p>Favor de introducir su fecha de nacimiento</p>
+          </div>
+
+          <div class="labels">
+            <input
+              class="inputValid"
+              id="cellphone"
+              type="text"
+              name="cellphone"
+              placeholder="Celular"
+              autocomplete="off"
+              maxlength="10"
+            />
+            <p>Introduzca un celular válido de 10 dígitos</p>
+          </div>
+
+          <div class="labels">
+            <input
+              class="inputValid"
+              id="RFC"
+              type="text"
+              name="RFC"
+              placeholder="RFC (Opcional si requiere factura)"
+              autocomplete="off"
+            />
+            <p>Introduzca un RFC válido ejemplo: JUMM990313XX0</p>
+          </div>
+
+          <div class="labels sinFactura optional">
+            <input
+              class="inputValid"
+              id="postalCode"
+              type="text"
+              name="postalCode"
+              placeholder="Código postal"
+              autocomplete="off"
+              maxlength="5"
+            />
+            <p>Introduzca un código postal válido de México</p>
+          </div>
+
+          <div class="labels sinFactura optional">
+            <!-- <input
+              class="inputValid"
+              id="socialCause"
+              type="text"
+              name="socialCause"
+              placeholder="Causa social"
+              autocomplete="off"
+              maxlength="250"
+            /> -->
+
+            <textarea class="inputValid"
+              id="socialCause"
+              name="socialCause"
+              placeholder="Razón social o nombre completo"
+              autocomplete="off"
+              maxlength="250"
+              draggable="false" style="resize: none;"></textarea>
+            <p>Escribe el nombre que aparecerá en la factura</p>
+          </div>
+
+          <div class="radioGroup">
+            <p>Selecciona la opción que prefieras para que tu donación se te haga en automático</p>
+            <input
+              type="radio"
+              name="subscriptionPlan"
+              value="P-2UD81165UL330525PL4PWLRY"
+              checked="checked"
+            />
+            <label class="radioButtons">$500 MXN (Mensual) </label>
+            <span class="checkmark"></span>
+
+            <input
+              type="radio"
+              name="subscriptionPlan"
+              value="P-0W848037K9809841FL5NE2YQ"
+            />
+            <label class="radioButtons">$6000 MXN (Anual)</label>
+            <span class="checkmark"></span>
+          </div>
+
+          <input id="kidId" name="kidId" type="hidden" value="<%= kid._id %>" />
+        </div>
+
+        <input type="submit" value="Enviar" />
+      </form>
+    </div>
+
+    <script src="/js/forum.js"></script>
+  </body>
+</html>

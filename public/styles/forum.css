@@ -1,0 +1,170 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url('./fonts/Gotham/Metropolis-Light.otf'); 
+  src: url('./fonts/Gotham/Metropolis-Light.otf?#iefix') format('embedded-opentype'), 
+      url('./fonts/Gotham/Metropolis-Bold.otf') format('otf'), 
+}
+
+body{
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Gotham, Arial;
+  box-sizing: border-box;
+  background-attachment: fixed;
+}
+
+.welcome{
+  width: 50%;
+  margin: 5% 0 0 5%;
+  color: rgb(252, 230, 230);
+}
+
+h1{
+  font-size: 3rem;
+  font-family: Gotham, Arial;
+  font-weight: bold;
+}
+p{
+  font-size: 1.1rem;
+}
+
+.container{
+  width: 70%;
+  margin: auto;
+  margin-top: 4%;
+}
+
+.form{
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+}
+
+
+input[type="text"],
+input[type="password"],
+input[type="date"]{
+  padding: 20px;
+}
+
+.labels{
+  display: inherit;
+}
+.labels p{
+  font-size: 1rem;
+}
+
+
+.sinFactura{
+  display: none;
+}
+
+.factura{
+  display: inherit;
+}
+
+.inputValid + p{
+  display: block;
+}
+
+.inputInvalid{
+  border-color: red;
+}
+
+.inputValid + p{
+  display: none;
+}
+
+
+
+
+input[type="submit"]{
+  display: block;
+  margin-left: auto;
+  background-color: rgba(255, 255, 255, 0.267);
+  font-size: 1.2rem;
+  padding: 10px;
+  border-color: rgba(255, 255, 255, 0.267) ;
+  color: black;
+}
+
+input[type="submit"]:hover{
+  display: block;
+  margin-left: auto;
+  background-color: black;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-color: black;
+  color: white;
+}
+
+@media only screen and (max-width: 1340px){
+
+  .radioGroup{
+    grid-column: span 2;
+    justify-self: center;
+  }
+}
+
+@media only screen and (max-width: 870px){
+.container{
+    width: 80%;
+  }
+
+  .labels p{
+  font-size: 0.8rem;
+}
+  .welcome{
+    width: 80%;
+    margin: auto;
+  }
+
+}
+
+
+@media only screen and (max-width: 775px){
+  h1{
+    font-size: 2rem;
+  }
+  p{
+    font-size: 1rem;
+  }
+
+}
+
+@media only screen and (max-width: 672px){
+
+  input[type="submit"]{
+    margin-top: 5%;
+    font-size: 1rem;
+  }
+
+  .labels p{
+  font-size: 0.8rem;
+}
+  
+
+}
+
+
+@media only screen and (max-width: 562px){
+  
+  .labels{
+    grid-column: span 2;
+  }
+
+}
+
+@media only screen and (max-width: 382px){
+  .radioButtons{
+    font-size: 0.8rem;
+    
+    display: block;
+  }
+  .labels p{
+  font-size: 0.8rem;
+}
+}

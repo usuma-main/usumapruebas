@@ -1,0 +1,203 @@
+@font-face {
+  font-family: "Gotham-bold";
+  src: url("./fonts/gothamBold/gb.otf");
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("./fonts/gothamBold/GothamLight.otf");
+}
+
+
+
+body{
+  font-family: "Gotham";
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #3cabbf;
+  z-index: -1;
+}
+
+h1{
+  font-family: "Gotham-bold";
+  color: white;
+  margin: 2% 0 0 11%;
+}
+
+#gratitude{
+  font-family: "Gotham-bold";
+  color: white;
+  margin-left: 20%;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.container {
+  width: 60%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.data {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px;
+  background-color: #f7f7f7;
+  -webkit-box-shadow: 0px 7px 5px 0px rgba(53, 149, 166, 0.77);
+  -moz-box-shadow: 0px 7px 5px 0px rgba(53, 149, 166, 0.77);
+  box-shadow: 0px 7px 5px 0px rgba(53, 149, 166, 0.77);
+  font-size: 1.3rem;
+}
+
+.data p{
+  margin: 15px;
+}
+
+#paypal-button-container{
+  grid-column: span 2;
+}
+
+#photoKid img {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width : 1470px){
+  .data p{
+    margin: 4%;
+  }
+}
+
+@media only screen and (max-width : 1114px){
+  .data{
+    font-size: 1rem;
+  }
+}
+
+
+@media only screen and (max-width : 934px){
+  .data{
+    font-size: 0.8rem;
+    grid-template-columns: 1fr;
+  }
+
+  .data p{
+    margin: 3px;
+  }
+
+  #paypal-button-container{
+    width: 100%;
+  }
+
+  h1{
+    color: white;
+    margin: 2% 0 0 1%;
+  }
+  
+  #gratitude{
+    color: white;
+    margin-left: 10%;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+}
+
+
+
+@media only screen and (max-width : 776px){
+  .data{
+    font-size: 0.8rem;
+    grid-template-columns: 1fr;
+  }
+
+  .data p{
+    margin: 3px;
+  }
+
+  h1{
+    color: white;
+    margin: 2% 0 0 1%;
+    font-size: 1.4rem;
+  }
+  
+  #gratitude{
+    color: white;
+    margin-left: 10%;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .container {
+  width: 80%;
+}
+
+}
+
+
+@media only screen and (max-width : 591px){
+
+  .container {
+  width: 100%;
+}
+
+}
+
+@media only screen and (max-width : 541px){
+
+
+  h1{
+    font-size: 1rem;
+  }
+  
+  #gratitude{
+    font-size: 0.8rem;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+}
+
+
+
+@media only screen and (max-width : 473px){
+
+  #background {
+    width: 100%;
+  }
+
+  .container{
+    grid-template-columns: 1fr;
+  }
+
+  .data{
+    order: 1;
+  }
+
+  .data p{
+    margin: 3px;
+  }
+
+  h1{
+    font-size: 1.4rem;
+  }
+  
+  #gratitude{
+    margin-left: 10%;
+    font-size: 1rem;
+  }
+
+}
+
+
+
+

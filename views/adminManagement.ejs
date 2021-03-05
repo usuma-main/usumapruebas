@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<link rel="shortcut icon"   href="/favicon.ico"/>
+		<title>Administrador</title>
+		<!-- styles-->
+		<link rel="stylesheet" href="/styles/styles.min.css"/>
+		<link rel="stylesheet" href="/styles/adminPanel.css" />
+		<!-- web-font loader-->
+		<script>
+			WebFontConfig = {
+
+				google: {
+
+					families: ['Quicksand:300,400,500,700', 'Permanent+Marker:400'],
+
+				}
+
+			}
+
+			function font() {
+
+				var wf = document.createElement('script')
+
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
+				wf.type = 'text/javascript'
+				wf.async = 'true'
+
+				var s = document.getElementsByTagName('script')[0]
+
+				s.parentNode.insertBefore(wf, s)
+
+			}
+
+			font()
+		</script>
+	</head>
+	<body>
+		<div class="page-wrapper">
+			  <!-- aside dropdown start-->
+			<%- include("partials/asidemenu") -%>
+			<!-- aside dropdown end-->
+			<!-- header start-->
+
+			<%- include("partials/MainNavAdmin") -%>
+			<!-- header end-->
+			
+			<main class="main">
+				<section class="promo-primary promo-primary--shop">
+					<picture>
+						<source srcset="/img/2photo.jpg" media="(min-width: 992px)"/><img class="img--bg" src="/img/2photo.jpg" alt="img"/>
+					</picture>
+					<div class="promo-primary__description"> <span>ADMIN</span></div>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item">
+										<h1 class="promo-primary__title"><span>Admin</span> <span>Cuenta</span></h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<!-- shop start-->
+				<section class="section shop">
+					<div class="container">
+						
+						<div class="row">
+							<div class="col-lg-3">
+								<div class="">
+									<svg class="icon">
+										<use xlink:href="#close"></use>
+									</svg></span>
+									<div >
+										<form class="form filter-form" action="/admin/panel" method="GET" autocomplete="off">
+											
+											<div class="shop-aside__option-block">
+												<h6 class="shop-aside__title">Filtrar por opción</h6>
+
+												<% if (godParent =="yes"){%>
+												<label class="form__radio-label"><span class="form__label-text">Todos</span>
+													<input class="form__input-radio" type="radio" name="hasGodParent" value="all" /><span class="form__radio-mask"></span>
+												</label>
+												<label class="form__radio-label"><span class="form__label-text">Apadrinados</span>
+													<input class="form__input-radio" type="radio" name="hasGodParent" value="yes" checked="checked"/><span  class="form__radio-mask"></span>
+												</label>
+												<label class="form__radio-label"><span class="form__label-text">Sin apadrinar</span>
+													<input class="form__input-radio" type="radio" name="hasGodParent" value="no"/><span class="form__radio-mask"></span>
+												</label>
+												
+												<%}else if(godParent =="no"){%>
+													<label class="form__radio-label"><span class="form__label-text">Todos</span>
+														<input class="form__input-radio" type="radio" name="hasGodParent" value="all" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">Apadrinados</span>
+														<input class="form__input-radio" type="radio" name="hasGodParent" value="yes"/><span  class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">Sin apadrinar</span>
+														<input class="form__input-radio" type="radio" name="hasGodParent" value="no" checked="checked"/><span   class="form__radio-mask"></span>
+													</label>
+												
+												<%}else {%>
+													<label class="form__radio-label"><span class="form__label-text">Todos</span>
+														<input class="form__input-radio" type="radio" name="hasGodParent" value="all" checked="checked"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">Apadrinados</span>
+														<input class="form__input-radio" type="radio" name="hasGodParent" value="yes"/><span  class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">Sin apadrinar</span>
+														<input class="form__input-radio" type="radio" name="hasGodParent" value="no"/><span  
+														 class="form__radio-mask"></span>
+													</label>
+													
+												<% } %>
+												
+												
+
+												<%if(schoolGrade =="1ro"){%>
+													<label class="form__radio-label"><span class="form__label-text">Todos los grados </span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="all" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">1er grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="1ro" checked="checked"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">2do grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="2do"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">3er grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="3ro"/><span class="form__radio-mask"></span>
+													</label>
+	
+													<label class="form__radio-label"><span class="form__label-text">4to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="4to"/><span class="form__radio-mask"></span>
+													</label>
+	
+													<label class="form__radio-label"><span class="form__label-text">5to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="5to"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">6to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="6to"/><span class="form__radio-mask"></span>
+													</label>
+												<%}else if(schoolGrade =="2do"){%>
+													<label class="form__radio-label"><span class="form__label-text">Todos los grados </span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="all" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">1er grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="1ro" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">2do grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="2do" checked="checked"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">3er grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="3ro"/><span class="form__radio-mask"></span>
+													</label>
+	
+													<label class="form__radio-label"><span class="form__label-text">4to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="4to"/><span class="form__radio-mask"></span>
+													</label>
+	
+													<label class="form__radio-label"><span class="form__label-text">5to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="5to"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">6to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="6to"/><span class="form__radio-mask"></span>
+													</label>
+												<%}else if(schoolGrade =="3ro"){%>
+													<label class="form__radio-label"><span class="form__label-text">Todos los grados </span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="all" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">1er grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="1ro" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">2do grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="2do" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">3er grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="3ro" checked="checked"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">4to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="4to"/><span class="form__radio-mask"></span>
+													</label>
+	
+													<label class="form__radio-label"><span class="form__label-text">5to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="5to"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">6to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="6to"/><span class="form__radio-mask"></span>
+													</label>
+												<%}else if(schoolGrade =="4to"){%>
+													<label class="form__radio-label"><span class="form__label-text">Todos los grados </span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="all" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">1er grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="1ro" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">2do grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="2do" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">3er grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="3ro" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">4to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="4to" checked="checked"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">5to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="5to"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">6to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="6to"/><span class="form__radio-mask"></span>
+													</label>
+												<%}else if(schoolGrade =="5to"){%>
+													<label class="form__radio-label"><span class="form__label-text">Todos los grados </span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="all" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">1er grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="1ro" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">2do grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="2do" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">3er grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="3ro" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">4to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="4to" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">5to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="5to" checked="checked"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">6to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="6to"/><span class="form__radio-mask"></span>
+													</label>
+												<%}else if(schoolGrade =="6to"){%>
+													<label class="form__radio-label"><span class="form__label-text">Todos los grados </span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="all" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">1er grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="1ro" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">2do grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="2do" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">3er grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="3ro" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">4to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="4to" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">5to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="5to" /><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">6to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="6to" checked="checked"/><span class="form__radio-mask"></span>
+													</label>
+												<%}else {%>
+													<label class="form__radio-label"><span class="form__label-text">Todos los grados </span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="all" checked="checked"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">1er grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="1ro"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">2do grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="2do"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">3er grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="3ro"/><span class="form__radio-mask"></span>
+													</label>
+	
+													<label class="form__radio-label"><span class="form__label-text">4to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="4to"/><span class="form__radio-mask"></span>
+													</label>
+	
+													<label class="form__radio-label"><span class="form__label-text">5to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="5to"/><span class="form__radio-mask"></span>
+													</label>
+													<label class="form__radio-label"><span class="form__label-text">6to grado</span>
+														<input class="form__input-radio" type="radio" name="schoolGrade" value="6to"/><span class="form__radio-mask"></span>
+													</label>
+												<%}%>
+												
+											</div>
+											
+											<div class="shop-aside__buttons-block">
+												<button class="form__submit" type="submit">Filtrar</button>
+											</div>
+										</form>
+										
+									</div>
+									
+								</div>
+							</div>
+							<div class="col-lg-9">
+								<div class="row offset-30">
+								<% kids.forEach(function(kid){ %>
+								
+									<div class="col-12 col-sm-6 col-md-4">
+										<div class="shop-item">
+											<div onclick="deleteKid('<%= kid._id%>')" class="icon-item__img delete-kid" ><img src="/img/svg/remove.svg" alt="icon"></div>
+											<div class="shop-item__img"><a class="shop-item__add" href="/admin/editKid?Id=<%= kid._id %>" >
+												<svg class="icon">
+													<use xlink:href="#man"></use>
+												</svg><span>Editar</span></a><img class="img--contain" src="data:image/<%=kid.image.contentType%>;base64, 
+												<%=kid.image.data.toString('base64')%>" alt="img"/>
+											</div>
+											<div class="shop-item__details">
+												<h6 class="shop-item__name"><a href="/admin/editKid?Id=<%= kid._id %>"><%= kid.name %> <%= kid.lastname %></a></h6><span class="shop-item__price">  <%= kid.schoolGrade %> grado </span>
+											
+												
+											</div>
+										</div>
+									</div>
+								
+								<% }) %>
+							</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- shop end-->
+				<!-- bottom bg start-->
+				<section class="bottom-background background--brown">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="bottom-background__img"><img src="/img/bottom-bg.png" alt="img"/></div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- bottom bg end-->
+			</main>
+			<%- include("partials/footer") -%>
+			<div class="shop__backdrop"></div>
+		</div>
+		
+		<!-- libs-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="/js/libs.min.js"></script>
+		<!--scripts-->
+		<script src="/js/common.min.js"></script>
+		<script src=" /js/adminPanel.js"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,314 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+	min-height: 75rem;
+	padding-top: 4.5rem;
+  }
+  .navCustom {
+	border: 2px solid #33abbe;
+	background-color: #33abbe;
+  border-radius: 55px;
+  
+}
+
+.btnDonate {
+	border: 4px solid #EE743B;
+	border-radius: 55px;
+	background-color: #EE743B;
+}
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	color: #5a5a5a;
+  }
+  
+  
+  /* CUSTOMIZE THE CAROUSEL
+  -------------------------------------------------- */
+  
+  /* Carousel base class */
+  .carousel {
+	margin-bottom: 4rem;
+  }
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+	bottom: 3rem;
+	z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+	height: 32rem;
+  }
+  .carousel-item > img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	height: 32rem;
+  }
+  
+  
+  /* MARKETING CONTENT
+  -------------------------------------------------- */
+  
+  /* Center align the text within the three columns below the carousel */
+  .marketing .col-lg-4 {
+	margin-bottom: 1.5rem;
+	text-align: center;
+  }
+  .marketing h2 {
+	font-weight: 400;
+  }
+  .marketing .col-lg-4 p {
+	margin-right: .75rem;
+	margin-left: .75rem;
+  }
+  
+  
+  /* Featurettes
+  ------------------------- */
+  
+  .featurette-divider {
+	margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  }
+  
+  /* Thin out the marketing headings */
+  .featurette-heading {
+	font-weight: 300;
+	line-height: 1;
+	letter-spacing: -.05rem;
+  }
+  
+  
+  /* RESPONSIVE CSS
+  -------------------------------------------------- */
+  
+  @media (min-width: 40em) {
+	/* Bump up size of carousel content */
+	.carousel-caption p {
+	  margin-bottom: 1.25rem;
+	  font-size: 1.25rem;
+	  line-height: 1.4;
+	}
+  
+	.featurette-heading {
+	  font-size: 50px;
+	}
+  }
+  
+  @media (min-width: 62em) {
+	.featurette-heading {
+	  margin-top: 7rem;
+	}
+  }
+  
+
+  .miniatures {
+	  width: 140px;
+	  height: auto;
+  }
+
+  .logoUsuma {
+    height: auto;
+    width: 40%;
+    max-width: 419px;
+	text-align: right;
+	position: relative;
+	right: 0px;
+	position: absolute;
+	float:right;
+}
+
+  .linea1 {
+	position: absolute;
+	width: 152%;
+	max-width: 592px;
+	top: 107px;
+	left: -383px;
+}
+
+.textBlueUsuma {
+	color: #33ABBE;
+}
+
+.manchaAzul {
+	width: 10%;
+	height: auto;
+	max-width: 250px;
+}
+
+.centeredImage {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+.quoteImage {
+	width: 70%;
+}
+
+.textQuote {
+	text-align: center;
+	width: 55%;
+	position: relative;
+	top: -103px;
+	left: 24%;
+}
+.quoteAuthor {
+	text-align: right;
+}
+
+
+.mancha1 {
+	float: right;
+	width: 30%;
+	left: 3%;
+	position: relative;
+}
+
+.mancha2 {
+	float: left;
+	width: 30%;
+	position: absolute;
+	left: 0%;
+	max-width: 315px;
+}
+
+.mancha3 {
+	float: right;
+	width: 41%;
+	left: 50%;
+	position: absolute;
+	top: 511px;
+	max-width: 562px;
+}
+
+.textPurple {
+	color: #A53680;
+
+}
+
+.btnInvolucrate {
+	background-color: #A53680;
+	border: 2px solid #A53680;
+	/* text-align: right; */
+	/* float: right; */
+	/* position: absolute; */
+	/* left: 44%; */
+	/* top: 100; */
+}
+
+.purpleline {
+	position: absolute;
+	width: 47%;
+	/* top: 10%; */
+	/* top: 2193px; */
+	left: -4%;
+}
+
+.iconImage {
+	width: 25%;
+}
+.imageAlignR {
+	text-align: right;
+	clear: right;
+	float: right;
+}
+
+.centeredText {
+	text-align: center;
+}
+
+.biggerIcon {
+	width: 46px;
+	transform: rotate(-180deg);
+}
+
+.btnInvolucrateOrange {
+	background-color: #EE743B;
+	border: 2px solid #EE743B;
+	left: -41%;
+	position: relative;
+}
+
+.textOrange {
+	color: #EE743B;
+}
+
+
+
+.stripeBlue {
+	width: 30%;
+	max-width: 300px;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 48%;
+	left: 2%;
+	z-index: -1;
+	top: -8%;
+}
+
+.footerWave {
+	max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+}
+
+.mancha6 {
+	float: right;
+	z-index: -1;
+	max-width: 1137px;
+	width: 96%;
+	position: absolute;
+	right: 0px;
+	top: -27px;
+}
+
+.stripBlueUp {
+	z-index: -1;
+	position: absolute;
+	left: -9px;
+	width: 99%;
+	max-width: 500px;
+}
+
+.mancha7 {
+	z-index: -1;
+	position: absolute;
+	right: 0px;
+	width: 60%;
+	max-width: 500px;
+}
+
+.footerDiv {
+	border: 2px solid #33abbe;
+	background-color: #33abbe;
+}
+
+.booksPackage {
+    height: auto;
+    width: 68%;
+    max-width: 400px;
+}
+
+.profileTestimonyPhoto {
+	height: auto;
+	width: 100%;
+	max-width: 150px;
+	border-radius: 50%;
+}
+
+.pieChart {
+	width: 100%;
+}

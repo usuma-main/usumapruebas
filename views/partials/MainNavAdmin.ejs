@@ -1,0 +1,41 @@
+<header class="header header--front">
+				<div class="container-fluid">
+					<div class="row no-gutters justify-content-between">
+						<div class="col-auto d-flex align-items-center">
+							<div class="dropdown-trigger d-none d-sm-block" >
+								<div class="dropdown-trigger__item" style="color: white;"></div>
+							</div>
+							<div class="header-logo"><a class="header-logo__link" href="#"><img class="header-logo__img logo--light" src="/img/usumaLogo.png" alt="logo" /><img class="header-logo__img logo--dark" src="/img/usumaLogo.png" alt="logo"/></a></div>
+						</div>
+						<div class="col-auto">
+							<!-- main menu start-->
+							<nav>
+								<ul class="main-menu"  style=" color: white;" >
+									<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="/admin/panel"><span>Panel de administración</span></a></li>
+									<li class="main-menu__item main-menu__item--has-child"><a class="main-menu__link" href="/admin/addKid"><span>Añadir estudiante</span></a></li>							
+								
+								</ul>
+							</nav>
+							<!-- main menu end-->
+						</div>
+						<div class="col-auto d-flex align-items-center">
+							<!-- lang select start-->
+							<ul class="lang-select">
+								<li class="lang-select__item lang-select__item--active" style="color: white;"><span>Es</span>
+									<ul class="lang-select__sub-list">
+									
+										<li><a href="#">Español</a></li>
+									</ul>
+								</li>
+							</ul>
+							<!-- lang select end-->
+							<div class="dropdown-trigger d-block d-sm-none">
+								<div class="dropdown-trigger__item"></div>
+							</div>
+							<form style="height: 100%;" action="/admin/logout" method="POST">
+								<input type="submit" class="button button--squared"  style="background-color: #EE743B; color: white; border: none;" value="Cerrar sesión" >
+							</form>
+						</div>
+					</div>
+				</div>
+			</header>

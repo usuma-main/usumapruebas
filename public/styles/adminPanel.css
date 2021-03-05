@@ -1,0 +1,44 @@
+@font-face {
+  font-family: Gotham;
+  src: url(/styles/fonts/gb.otf);
+  font-weight: bold;
+}
+@font-face {
+  font-family: Gotham;
+  src: url(/styles/fonts/GothamBook.otf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: Gotham;
+  src: url(/styles/fonts/GothamLight.otf);
+  font-weight: lighter;
+}
+
+body {
+  font-family: "Gotham";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.highlight {
+  background-color: #f5bf05;
+  font-size: 2.5rem;
+}
+
+.delete-kid {
+  position: relative;
+  cursor: pointer;
+  margin: 1px;
+  z-index: 1;
+}
+
+.delete-kid img {
+  width: 8%;
+  height: auto;
+  right: 15px;
+  position: absolute;
+  top: 17px;
+  cursor: pointer;
+}

@@ -1,0 +1,153 @@
+@font-face {
+    font-family: GothamBold;
+    src: url(./fonts/gothamBold/gb.otf);
+  }
+
+  @font-face {
+    font-family: GothamBook;
+    src: url(./fonts/gothamBold/GothamBook.otf);
+  }
+
+  @font-face {
+    font-family: GothamLight;
+    src: url(./fonts/gothamBold/GothamLight.otf);
+  }
+  
+h1 {
+  color: #e74a0f;
+  
+}
+
+.Gbold {
+    font-family: 'GothamBold';
+}
+
+.GBook{
+  font-family: 'GothamBook';
+}
+
+.GLight{
+  font-family: 'GothamLight';
+}
+
+.center {
+  text-align: center;
+  border: 3px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  
+}
+
+.centered {
+  text-align: center;
+  position: relative;
+}
+
+
+
+
+
+.paperPlane {
+  position: absolute;
+  top: 54%;
+  left: 0%;
+  width: 17%;
+  height: auto;
+  max-width: 200px;
+}
+
+.line {
+  position: absolute;
+  z-index: -1;
+  width: 90%;
+  height: 90%;
+  
+  right: 0;
+ 
+}
+
+.envelope {
+  width: 70%;
+  height: auto;
+  margin: auto;
+  position: relative;
+  max-width: 700px;
+  max-height: auto;
+}
+
+.buttonBack {
+  border-radius: 6px;
+  background-color: #286090; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.letterContent {
+  position: absolute;
+top: 20%;
+transform: rotate(-15deg);
+left: 31%;
+width: 33%;
+font-size: 2em;
+
+
+}
+@media only screen and (max-width: 1123px){
+  .letterContent{
+    font-size: 1.5em;
+    
+  }
+}
+@media only screen and (max-width: 688px){
+  .letterContent{
+    font-size: 1em;
+    
+  }
+}
+
+@media only screen and (max-width: 952px){
+  .letterContent{
+    font-size: 1.4em;
+    
+  }
+}
+  @media only screen and (max-width: 753px){
+    .letterContent{
+      font-size: 1.3em;
+      
+    }
+}
+
+@media only screen and (max-width: 669px){
+  .letterContent{
+    font-size: 1.1em;
+    
+  }
+}
+  @media only screen and (max-width: 588px){
+    .letterContent{
+      font-size: 0.9em;
+      
+    }
+}
+@media only screen and (max-width: 484px){
+  .letterContent{
+    font-size: 0.7em;
+    
+  }
+}
+@media only screen and (max-width: 374px){
+  .letterContent{
+    font-size: 0.5em;
+    
+  }
+}

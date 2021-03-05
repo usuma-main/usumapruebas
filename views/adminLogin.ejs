@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<link rel="shortcut icon"   href="/favicon.ico"/>
+		<title>Iniciar Sesión</title>
+		<!-- styles-->
+		<link rel="stylesheet" href="/styles/styles.min.css"/>
+		<link rel="stylesheet" href="/styles/adminPanel.css" />
+		<!-- web-font loader-->
+		<script>
+			WebFontConfig = {
+
+				google: {
+
+					families: ['Quicksand:300,400,500,700', 'Permanent+Marker:400'],
+
+				}
+
+			}
+
+			function font() {
+
+				var wf = document.createElement('script')
+
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
+				wf.type = 'text/javascript'
+				wf.async = 'true'
+
+				var s = document.getElementsByTagName('script')[0]
+
+				s.parentNode.insertBefore(wf, s)
+
+			}
+
+			font()
+		</script>
+	</head>
+	<body>
+		<div class="page-wrapper">
+            
+            <!-- aside dropdown start-->
+			<%- include("partials/asidemenu") -%>
+			<!-- aside dropdown end-->
+			<!-- header start-->
+			<%- include("partials/mainNav") -%>
+			<!-- header end-->
+			
+			<main class="main">
+				<section class="promo-primary promo-primary--shop">
+					<picture>
+						<source srcset="/img/2photo.jpg" media="(min-width: 992px)"/><img class="img--bg" src="/img/2photo.jpg" alt="img"/>
+					</picture>
+					<div class="promo-primary__description"> <span>ADMIN</span></div>
+					<div class="container">
+						<div class="row">
+							<div class="col-auto">
+								<div class="align-container">
+									<div class="align-container__item">
+										<h1 class="promo-primary__title"><span>Admin</span> <span>Cuenta</span></h1>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- section start-->
+				<section class="section background--brown">
+					<div class="container">
+						<div class="row offset-margin">
+							<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-0 col-xl-4 margin-bottom">
+								<form class="form account-form sign-in-form" action="admin/login", method="POST">
+									<div class="form__fieldset">
+										<h6 class="form__title">Inicia sesión</h6>
+										<div class="row">
+											<div class="col-12">
+												<input class="form__field" type="text" name="username" placeholder="Usuario"/>
+												<input class="form__field" type="password" name="password" placeholder="Contraseña"/>
+											</div>
+											<div class="col-12 d-flex align-items-end justify-content-between flex-wrap">
+												<label class="form__checkbox-label"><span class="form__label-text">Recuerdame</span>
+													<input class="form__input-checkbox" type="checkbox" name="size-select" value="Size XXL" checked="checked"/><span class="form__checkbox-mask"></span>
+												</label>
+											</div>
+											<div class="col-12 text-center">
+												<button class="form__submit" type="submit">Iniciar sesión</button>
+											</div>
+										
+										</div>
+									</div>
+								</form>
+							</div>
+							
+							
+						</div>
+					</div>
+				</section>
+				<!-- section end-->
+				<!-- bottom bg start-->
+				<section class="bottom-background background--brown">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="bottom-background__img"><img src="/img/bottom-bg.png" alt="img"/></div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- bottom bg end-->
+			</main>
+			<%- include("partials/footer") -%>
+		</div>
+		<!-- libs-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="/js/libs.min.js"></script>
+		<!-- scripts-->
+		<script src="/js/common.min.js"></script>
+		
+	</body>
+</html>

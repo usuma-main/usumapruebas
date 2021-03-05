@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon"   href="/favicon.ico"/>
+	<title>Usuma | Confirmar</title>
+  <link rel="stylesheet" href="./styles/confirm.css">
+</head>
+<div id="background"></div>
+
+
+<h1>Escoge tu método de pago</h1>
+<p id="gratitude" >Gracias por tu generosidad</p>
+
+
+
+<div class="container">
+
+  <div class="data">
+    <p class="labelBold">Nombre</p>
+    <p id="fName"> <%= data.fName %> </p>
+    <p class="labelBold">Apellidos</p>
+    <p id="lastName"><%= data.lastName %></p>
+    <p class="labelBold">Email</p>
+    <p id="email"><%= data.email %></p>
+    <p class="labelBold">Fecha de nacimiento</p>
+    <p id="birthday"><%= data.birthday %></p>
+    <p class="labelBold">Celular</p>
+    <p id="cellphone"><%= data.cellphone %></p>
+    <% if (data.RFC){%>
+      <p class="labelBold">RFC</p>
+      <p id="RFC" > <%= data.RFC %> </p>
+      <p class="labelBold">Código postal</p>
+      <p id="postalCode" ><%= data.postalCode %></p>
+    <%}else{%>
+    <p id="RFC" style="display: none;">  <%=data.RFC%>  </p>
+    <p class="labelBold" style="display: none;" >RFC</p>
+    <p class="labelBold" style="display: none;">Código postal</p>
+    <p id="postalCode" style="display: none;"><%=data.postalCode%></p>
+    <% } %>
+    
+    <div id="paypal-button-container"></div>
+  </div>
+  <input id="kidId" type="hidden" value=<%=data.kidId%>>
+  <input id="subscriptionPlan" type="hidden" value=<%=data.subscriptionPlan%>>
+  <textarea style="display: none;" name="socialCause" id="socialCause"><%=data.socialCause%></textarea>
+
+  <div id="photoKid">
+    <img src="data:image/<%=kid.image.contentType%>;base64, 
+                                        <%=kid.image.data.toString('base64')%>" alt="">
+  </div>
+</div>
+
+
+<script src="https://www.paypal.com/sdk/js?client-id=AZPTW_F0P30E6kV9eV-9YhhT9hqOjcSBHucqVkWR7tWFgkMvUNJlWmMljXMzmjiieCGMdL9EccovbLwz&vault=true" data-sdk-integration-source="button-factory"></script>
+<script src="/js/paypal.js"></script>
+</html>

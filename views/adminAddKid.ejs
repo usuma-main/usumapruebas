@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon"   href="/favicon.ico"/>
+    <title>Admin nuevo estudiante</title>
+    <!-- styles-->
+    <link rel="stylesheet" href="/styles/styles.min.css" />
+    <link rel="stylesheet" href="/styles/adminPanel.css" />
+    <link rel="stylesheet" href="/styles/adminAddKid.css">
+    <!-- web-font loader-->
+    <script>
+        WebFontConfig = {
+
+            google: {
+
+                families: ['Quicksand:300,400,500,700', 'Permanent+Marker:400'],
+
+            }
+
+        }
+
+        function font() {
+
+            var wf = document.createElement('script')
+
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
+            wf.type = 'text/javascript'
+            wf.async = 'true'
+
+            var s = document.getElementsByTagName('script')[0]
+
+            s.parentNode.insertBefore(wf, s)
+
+        }
+
+        font()
+    </script>
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+        <!-- aside dropdown start -->
+        <%- include("partials/asidemenu") -%>
+        <!-- aside dropdown end-->
+        <!-- header start-->
+        <%- include("partials/MainNavAdmin") -%>
+        <!-- header end-->
+
+        <main class="main">
+            <section class="promo-primary promo-primary--shop">
+                <picture>
+                    <source srcset="/img/2photo.jpg" media="(min-width: 992px)" /><img class="img--bg" src="/img/2photo.jpg"
+                        alt="img" />
+                </picture>
+                <div class="promo-primary__description"> <span>ADMIN</span></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-auto">
+                            <div class="align-container">
+                                <div class="align-container__item">
+                                    <h1 class="promo-primary__title"><span>Admin</span> <span>Cuenta</span></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <form class="kidInformation" action="/admin/addKid" method="POST" enctype="multipart/form-data">
+                    <div class="banner">
+                        <h1>Añadir información del estudiante</h1>
+                    </div>
+                    <div class="item">
+                        <label for="name">Nombre<span>*</span></label>
+                        <input id="name" type="text" name="name" required />
+                    </div>
+                    <div class="item">
+                        <label for="lastname">Apellidos<span>*</span></label>
+                        <input id="lastname" type="text" name="lastname" required />
+                    </div>
+                   
+                    <div class="item">
+                        <label for="Hobbies">Hobbies</label>
+                        <input id="Hobbies" type="text" name="Hobbies" />
+                    </div>
+                    <div class="item">
+                        <label for="Vision">Vision </label>
+                        <input id="Vision" type="text" name="Vision" />
+                    </div>
+                    
+                    <div class="item">
+                        <label for="bdate">Fecha de nacimiento<span>*</span></label>
+                        <input id="bdate" type="date" name="birthday" required />
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="flax">
+                        <div class="item">
+                            <p>Grado escolar <span>*</span></p>
+                            <select name="schoolGrade" required>
+                                <option selected value="" disabled selected></option>
+                                <option value="1ro">1ro</option>
+                                <option value="2do">2do</option>
+                                <option value="3ro">3ro</option>
+                                <option value="4to">4to</option>
+                                <option value="5to">5to</option>
+                                <option value="6to">6to</option>
+                                
+                            </select>
+                        </div>
+
+                         <div class="item">
+                            <p>Género <span>*</span></p>
+                            <select name="gender" required>
+                                <option selected value="" disabled selected></option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>                                
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <label for="familiarName">Nombre del familiar </label>
+                        <input id="familiarName" type="text" name="familiarName" />
+                    </div>
+
+                    <div class="item">
+                        <label for="cellphone">Teléfono <span></span></label>
+                        <input id="cellphone" type="number" name="cellphone" />
+                    </div>
+                    <div class="item">
+                        <label for="father">Padre </label>
+                        <input id="father" type="text" name="father" />
+                    </div>
+                    <div class="item">
+                        <label for="fatherCellphone">Celular del padre </label>
+                        <input id="fatherCellphone" type="number" name="fatherCellphone" />
+                    </div>
+                    <div class="item">
+                        <label for="fatherSchoolGrade">Escolaridad del padre </label>
+                        <input id="fatherSchoolGrade" type="text" name="fatherSchoolGrade" />
+                    </div>
+                    <div class="item">
+                        <label for="mother">Madre </label>
+                        <input id="mother" type="text" name="mother" />
+                    </div>
+                    <div class="item">
+                        <label for="motherCellphone">Celular de la madre </label>
+                        <input id="motherCellphone" type="text" name="motherCellphone" />
+                    </div>
+                    <div class="item">
+                        <label for="motherSchoolGrade">Escolaridad de la madre </label>
+                        <input id="motherSchoolGrade" type="text" name="motherSchoolGrade" />
+                    </div>
+                    <div class="item">
+                        <label for="sons">Numero de hijos </label>
+                        <input id="sons" type="number" name="sons" />
+                    </div>
+                    <div class="item">
+                        <p>Foto del estudiante</p>
+                        <input type="file" value="Subir imagen" name="image" required>
+                    </div>
+                    <div class="item">
+                        <label style="display: initial;" for="noticeOfPrivacy">Aviso de privacidad</label>
+                        <input style="display: initial; width: 5%; text-align: left;" type="checkbox" name="noticeOfPrivacy">
+                    </div>
+                    <div class="btn-block">
+                        <button type="submit" href="/">Subir nuevo estudiante</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <%- include("partials/footer") -%>
+    </div>
+    <!-- libs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="/js/libs.min.js"></script>
+    <!-- scripts-->
+    <script src="/js/common.min.js"></script>
+
+</body>
+
+</html>
